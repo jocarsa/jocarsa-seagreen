@@ -1,5 +1,6 @@
 from funciones.registrosporhora import registrosPorHora
 from funciones.distintasips import distinctIPs
+from funciones.masfunciones import *
 import os
 
 carpeta = "/var/log/apache2/"
@@ -8,3 +9,7 @@ for root, dirs, files in os.walk(carpeta):
         if file.endswith('.log'):
             registrosPorHora(carpeta+file)
             distinctIPs(carpeta+file)
+            response_status_pie_chart(carpeta+file)
+            operating_systems_pie_chart(carpeta+file)
+            browsers_pie_chart(carpeta+file)
+            robots_pie_chart(carpeta+file)
