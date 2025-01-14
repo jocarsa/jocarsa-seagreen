@@ -31,4 +31,4 @@ def registrosPorHora(ruta):
     plt.tight_layout()
     nombre_archivo = get_filename_without_extension(ruta)
     os.makedirs("imagenes", exist_ok=True)
-    plt.savefig("imagenes/"+nombre_archivo+".png")
+    plt.savefig("imagenes/registrosporhora-"+nombre_archivo+".png")
