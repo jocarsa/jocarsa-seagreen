@@ -32,5 +32,5 @@ def distinctIPs(ruta):
     # Guardar el gráfico
     nombre_archivo = get_filename_without_extension(ruta)
     os.makedirs("imagenes", exist_ok=True)
-    plt.savefig(f"imagenes/distintasips-{nombre_archivo}.png")
+    plt.savefig(f"imagenes/{nombre_archivo}_distintasips.png")
     plt.close()
