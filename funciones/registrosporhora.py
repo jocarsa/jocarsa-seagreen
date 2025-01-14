@@ -29,6 +29,10 @@ def registrosPorHora(ruta):
     plt.title("Accesos por horas")
     plt.xticks(rotation=45)
     plt.tight_layout()
+    
     nombre_archivo = get_filename_without_extension(ruta)
+    virtual_host = nombre_archivo.split("-")[0]
     os.makedirs("imagenes", exist_ok=True)
-    plt.savefig("imagenes/"+nombre_archivo+"_registrosporhora.png")
+    os.makedirs("imagenes/"+virtual_host, exist_ok=True)
+    plt.savefig(f"imagenes/{virtual_host}/{nombre_archivo}_registrosporhora.png")
+    plt.close()
