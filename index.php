@@ -70,11 +70,13 @@ function getImages($directory) {
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Panel de Control - Imágenes</title>
+    <title>jocarsa | seagreen</title>
+    <link rel="icon" type="image/svg+xml" href="https://jocarsa.com/static/logo/jocarsa | SeaGreen.svg" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Ubuntu,Arial, sans-serif;
             background: #f5f5f5;
         }
         header {
@@ -88,7 +90,11 @@ function getImages($directory) {
             color: white;
             padding: 1rem;
             display: flex;
-            justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
         }
         nav a, nav span {
             color: white;
@@ -138,7 +144,8 @@ function getImages($directory) {
         }
         .left-pane {
             width: 20%;
-            background: #fff;
+            background: seagreen;
+            color:white;
             border-right: 1px solid #ccc;
             padding: 1rem;
         }
@@ -153,15 +160,19 @@ function getImages($directory) {
         }
         .folder-list li {
             margin: 0.5rem 0;
+            padding:10px;
+            border-bottom:1px solid rgba(255,255,255,0.2);
         }
         .folder-list a {
             color: #333;
             text-decoration: none;
             font-weight: bold;
+           
+            width:100%;
         }
         .folder-list a.selected {
-            color: seagreen;
-            text-decoration: underline;
+            color: white;
+            
         }
         .right-pane {
             width: 80%;
@@ -220,6 +231,18 @@ function getImages($directory) {
             cursor: pointer;
             font-weight: bold;
         }
+        h1{
+            display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+
+        }
+        h1 img{
+            width:60px;
+        }
     </style>
     <script>
         function openModal(imgSrc) {
@@ -253,13 +276,13 @@ function getImages($directory) {
     </div>
 <?php else: ?>
     <!-- HEADER -->
-    <header>
-        <h1>Mi Empresa - Panel de Control</h1>
-        <p>Bienvenido(a) a nuestro panel de monitoreo de logs e imágenes.</p>
-    </header>
+   
 
     <!-- NAVIGATION -->
     <nav>
+    <h1>
+                <img src="https://jocarsa.com/static/logo/jocarsa | White.svg" alt="Logo">jocarsa | seagreen
+            </h1>
         <span>Usuario: <?php echo USERNAME; ?></span>
         <a href="?action=logout">Cerrar Sesión</a>
     </nav>
